@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}ClassroomHub{% endblock %}</title>
+    <style>
+        :root { color-scheme: light; font-family: system-ui, sans-serif; }
+        body { margin: 0; background: #f4f7fb; color: #172033; }
+        header { background: #173b67; color: white; padding: 1rem 6vw; }
+        nav { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+        nav a { color: white; text-decoration: none; margin-left: 1rem; }
+        .brand { font-size: 1.25rem; font-weight: 800; }
+        main { max-width: 1000px; margin: 0 auto; padding: 4rem 6vw; }
+        .hero, .card { background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 8px 24px rgba(23,59,103,.08); }
+        .hero { background: linear-gradient(135deg, #e4f0ff, #ffffff); }
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-top: 0; }
+        h2 { color: #173b67; }
+        .button { display: inline-block; margin-top: 1rem; padding: .75rem 1rem; border-radius: 8px; background: #e36b2c; color: white; text-decoration: none; font-weight: 700; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+        .tag { color: #e36b2c; font-size: .8rem; font-weight: 700; text-transform: uppercase; }
+        footer { text-align: center; color: #5d6b7e; padding: 2rem; }
+    </style>
+</head>
+<body>
+<header>
+    <nav aria-label="Navegación principal">
+        <a class="brand" href="{% url 'pages:home' %}">ClassroomHub</a>
+        <div>
+            <a href="{% url 'pages:resources' %}">Recursos</a>
+            <a href="{% url 'pages:about' %}">Sobre el proyecto</a>
+        </div>
+    </nav>
+</header>
+<main>{% block content %}{% endblock %}</main>
+<footer>Laboratorio 6 · Fundamentos de Django</footer>
+</body>
+</html>

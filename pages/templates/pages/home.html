@@ -1,0 +1,13 @@
+{% extends "pages/base.html" %}
+
+{% block title %}Inicio | ClassroomHub{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <p class="tag">Portal de aprendizaje</p>
+    <h1>Aprende. Practica. Comparte.</h1>
+    <p>ClassroomHub reúne recursos breves para avanzar en programación y desarrollo web con una ruta clara.</p>
+    <p>Ya hay {{ resource_count }} recursos de ejemplo disponibles.</p>
+    <a class="button" href="{% url 'pages:resources' %}">Explorar recursos</a>
+</section>
+{% endblock %}
