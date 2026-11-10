@@ -22,5 +22,17 @@ def resources(request):
     )
 
 
+def available_resources(request):
+    resources = Resource.objects.select_related("category").filter(
+        available=True
+    )
+
+    return render(
+        request,
+        "pages/resources.html",
+        {"resources": resources}
+    )
+
+
 def about(request):
     return render(request, "pages/about.html")
