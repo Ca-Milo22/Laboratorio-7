@@ -60,6 +60,7 @@ TEMPLATES = [
 WSGI_APPLICATION = "config.wsgi.application"
 
 
+# Base de datos temporal: SQLite
 # Conexión a MySQL
 DATABASES = {
     "default": {
@@ -75,7 +76,6 @@ DATABASES = {
     }
 }
 
-
 AUTH_PASSWORD_VALIDATORS = []
 
 LANGUAGE_CODE = "es"
@@ -86,9 +86,3 @@ USE_TZ = True
 STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-
-# Configuración de autenticación
-LOGIN_URL = "pages:login"
-LOGIN_REDIRECT_URL = "pages:dashboard"
-LOGOUT_REDIRECT_URL = "pages:home"

@@ -1,8 +1,8 @@
 # ClassroomHub
 
-ClassroomHub es una aplicación web educativa desarrollada con Django. Su objetivo es organizar y mostrar recursos de aprendizaje mediante categorías, utilizando una base de datos MySQL.
+ClassroomHub es una aplicación web educativa desarrollada con Django para el Laboratorio 7 del SENA. Su objetivo es organizar y mostrar recursos de aprendizaje mediante categorías, utilizando una base de datos MySQL.
 
-El proyecto permite consultar recursos, conocer su disponibilidad, registrar usuarios, iniciar y cerrar sesión, administrar permisos y controlar el acceso a determinadas páginas.
+El proyecto permite consultar recursos, conocer su disponibilidad y administrar la información desde el panel de Django.
 
 ## Requisitos
 
@@ -81,27 +81,6 @@ python manage.py createsuperuser
 
 Django solicitará un nombre de usuario y una contraseña.
 
-## Autenticación y usuarios
-
-ClassroomHub incluye un sistema de autenticación que permite:
-
-- Registrar nuevas cuentas de usuario.
-- Iniciar sesión con nombre de usuario y contraseña.
-- Cerrar sesión de forma segura.
-- Acceder a un panel privado.
-- Mantener sesiones de usuario.
-- Contar las visitas al panel durante la sesión.
-
-Los usuarios registrados normalmente no reciben permisos administrativos.
-
-## Grupos y permisos
-
-El proyecto utiliza el sistema de grupos y permisos de Django.
-
-Se incluye el grupo `Catalog reviewers`, al que se le asigna el permiso `pages.view_resource`.
-
-Los usuarios que pertenecen a este grupo pueden acceder a la página de revisión de recursos. Los usuarios sin ese permiso reciben un error 403 si intentan entrar.
-
 ## Ejecutar el servidor
 
 Comprobar la configuración:
@@ -123,14 +102,9 @@ http://127.0.0.1:8000/
 ## Rutas disponibles
 
 - `/` — Página principal.
-- `/resources/` — Listado público de recursos de aprendizaje.
+- `/resources/` — Listado de recursos de aprendizaje.
 - `/resources/available/` — Listado de recursos disponibles.
 - `/about/` — Información del proyecto.
-- `/accounts/signup/` — Registro de usuarios.
-- `/accounts/login/` — Inicio de sesión.
-- `/accounts/logout/` — Cierre de sesión mediante POST.
-- `/dashboard/` — Panel privado del usuario.
-- `/resources/review/` — Página privada para revisar recursos según los permisos.
 - `/admin/` — Panel administrativo de Django.
 
 ## Ejecutar pruebas
@@ -141,9 +115,7 @@ Para ejecutar las pruebas automatizadas:
 python manage.py test pages
 ```
 
-Las pruebas verifican el funcionamiento de las páginas, las plantillas, los recursos, las categorías, las relaciones entre modelos, la disponibilidad, el registro, la autenticación, las sesiones y los permisos.
-
-El proyecto cuenta actualmente con 29 pruebas automatizadas aprobadas.
+Las pruebas verifican el funcionamiento de las páginas, las plantillas, los recursos, las categorías, las relaciones entre modelos, la disponibilidad y las respuestas de error.
 
 Las pruebas utilizan una base de datos temporal independiente.
 
