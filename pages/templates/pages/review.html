@@ -1,0 +1,22 @@
+
+{% extends "pages/base.html" %}
+
+{% block content %}
+<h1>Revisión de recursos</h1>
+
+<p>Listado de recursos del catálogo.</p>
+
+{% if resources %}
+    <ul>
+        {% for resource in resources %}
+            <li>
+                <strong>{{ resource.title }}</strong>
+                <p>{{ resource.description }}</p>
+                <p>Categoría: {{ resource.category.name }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay recursos registrados.</p>
+{% endif %}
+{% endblock %}
